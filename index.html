@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Concordium - гайд для начинающих</title>
+    <title>Concordium - Beginners Guide</title>
     <meta name="description" content="The complete guide for Concordium testnet node set-up">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
@@ -44,7 +44,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="language-container">
-        <a href="./">English</a>
+        <a href="./ru">Russian</a>
     </div>
     <header class="">
         <div class="row my-3">
@@ -61,25 +61,23 @@
         <div class="row">
             <div class="col-sm">
                 <div class="alert alert-success text-center">
-                    <p class="mb-0">Последняя версия: 0.4.11</p>
+                    <p class="mb-0">Latest version: 0.4.11</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <p class="text-center">Привет! Этот гайд создан для того, чтобы позволить любому человеку развернуть
-                    ноду Concordium без особых сложностей.</p>
+                <p class="text-center">This guide was created for anyone who wants to set-up Concordium node.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-sm mb-5">
-                <h3>Требования:</h3>
+                <h3>Requirements:</h3>
                 <ul>
-                    <li>Сервер со следующими характеристиками:</li>
+                    <li>Server requirements:</li>
                     <ul>
-                        <li>Минимум 4 гигабайта оперативной памяти<br>
-                        </li>
-                        <li>30 гигабайт SSD</li>
+                        <li>Min. 4GB RAM</li>
+                        <li>30GB SSD</li>
                     </ul>
                 </ul>
             </div>
@@ -87,45 +85,41 @@
         <div class="row">
             <div class="container">
                 <div class="col-sm mb-5">
-                    <h3>0. Покупка сервера</h3>
-                    <button type="button" class="btn btn-primary" id="vpsButton">Раскрыть содержимое</button><br>
+                    <h3>0. Rent a Server</h3>
+                    <button type="button" class="btn btn-primary" id="vpsButton">Click to show</button><br>
                     <div id="vpsContent" class="d-none mb-3">
-                        Для начала нужно определиться с местом, где мы будем брать наш сервер. Я рекомендую сервис <a
-                            href="https://www.vultr.com/?ref=8671282">Vultr.com</a>, поэтому в качестве примера мы будем
-                        рассматривать именно его.<br>
-                        <strong>Регистрация</strong><br>
-                        Переходим на <a href="https://www.vultr.com/?ref=8671282">сайт</a>, кликаем Sign Up<br>
+                        As a first step we need to rent a server (VPS). I recommend <a
+                            href="https://www.vultr.com/?ref=8671282">Vultr.com</a>.<br>
+                        <strong>Registation</strong><br>
+                        Go to the <a href="https://www.vultr.com/?ref=8671282">site</a>, click Sign Up<br>
                         <img src="img/vps/1.png" class="img-fluid mb-2" alt="VPS Installing 1"><br>
-                        Заполняем форму, кликаем Create Account<br>
+                        Fill the form, click Create Account:<br>
                         <img src="img/vps/2.png" class="img-fluid mb-2" alt="VPS Installing 2"><br>
-                        В <a href="https://my.vultr.com/">личном кабинете</a> кликаем на плюсик:<br>
+                        On the 'Products' page click Plus button:<br>
                         <img src="img/vps/3.png" class="img-fluid mb-2" alt="VPS Installing 3"><br>
-                        Нам нужен сервер с минимум 4 гигабайтами оперативной памяти, ищем,
-                        находим:<br>
+                        We need at least 4Gb RAM server, let's chose the closest one:<br>
                         <img src="img/vps/4.png" class="img-fluid mb-2" alt="VPS Installing 4"><br>
                         <img src="img/vps/5.png" class="img-fluid mb-2" alt="VPS Installing 5"><br>
                         <img src="img/vps/6.png" class="img-fluid mb-2" alt="VPS Installing 6"><br>
-                        Арендуем<br>
+                        Now let's rent it (hostname can be any), click Deploy Now:<br>
                         <img src="img/vps/7.png" class="img-fluid mb-2" alt="VPS Installing 7"><br>
-                        Кликаем на Products слева в верхнем углу, переходим в панель с нашими серверами, ждем пока
-                        сервер перейдет в статус Running, кликаем на сервер<br>
+                        Then click 'Products' at the top left and wait till our server's status is 'Running' (green) and
+                        click on the server:<br>
                         <img src="img/vps/8.png" class="img-fluid mb-2" alt="VPS Installing 8"><br>
-                        Теперь нам нужны данные для подключения к серверу: его IP, логин и пароль. Их мы можем найти в
-                        местах, указанных на скриншоте:<br>
+                        We need the following server data, copy&paste them to notepad:<br>
                         <img src="img/vps/9.png" class="img-fluid mb-2" alt="VPS Installing 9"><br>
-                        Нам нужно подключиться к нашему серверу, для этого воспользуемся программой <a
-                            href="https://termius.com/">Termius</a>, скачиваем, устанавливаем, запускаем.<br>
-                        Необходимо создать новое подключение, для этого проделываем действия как на скриншоте<br>
+                        Now we need to connect to the server, to do this we will use <a
+                            href="https://termius.com/">Termius</a>. First of all download and install it.<br>
+                        Open Terminus and click '+New Host' as shown on the screen:<br>
                         <img src="img/vps/10.png" class="img-fluid mb-2" alt="VPS Installing 10"><br>
-                        В указанные поля нужно внести данные которые мы получали из панели сервера в Vultr, а именно:
-                        IP, логин и пароль. В поле Label пишем что угодно - это название нашего севрера в списке
-                        серверов
-                        в Termius.<br>
+                        In the following fields we need to type our server data (that we copied from Vultr): IP address,
+                        login and pass. You can type anything in 'Label' field - this is just the name of the server for
+                        your convenience.<br>
                         <img src="img/vps/11.png" class="img-fluid mb-2" alt="VPS Installing 11"><br>
-                        Два раза кликаем по добавленному серверу, в открывшемся диалоговом окне нажимаем "yes".<br>
+                        Double click on the server, in the pop-up click 'Yes'.<br>
                         <img src="img/vps/12.png" class="img-fluid mb-2" alt="VPS Installing 12"><br>
                         <img src="img/vps/13.png" class="img-fluid mb-2" alt="VPS Installing 13"><br>
-                        Поздравляю, вы зашли! Можно продолжать.
+                        Now we are in, congratulations! So we can continue.
                     </div>
                 </div>
             </div>
@@ -134,29 +128,26 @@
             <div class="container">
                 <div class="col-sm">
                     <div class="mb-5" id="preparation">
-                        <h3>1. Подготовка сервера</h3>
+                        <h3>1. Server Preparation</h3>
                         <div>
-                            <h4>1.1. Подготовка окружения</h4>
+                            <h4>1.1. Preparing the environment</h4>
                             <div class="mb-4 ml-1">
-                                Сначала нам нужно подготовить окружение к работе, для этого мы все будем делать в
-                                отдельном скрине и запишем переменные, которые нам пригодятся позднее:<br>
+                                Firstly we need to prepare the environment for work, to do this we will do everything in a separate screen and write down the variables that will be used later.<br>
                                 <kbd>screen -S concordium</kbd><br>
                                 <kbd>echo 'export PATH=$PATH:/home/concordium/concordium-software' >>
                                     $HOME/.bashrc</kbd><br>
                                 <kbd>echo 'export IP=$(curl ifconfig.me)' >> $HOME/.bashrc</kbd><br>
                                 <kbd>source ~/.bashrc</kbd><br>
                             </div>
-                            <h4>1.2. Установка необходимых пакетов</h4>
+                            <h4>1.2. Installing the required packages</h4>
                             <div class="mb-4 ml-1">
-                                Далее нам нужно установить необходимые пакеты, для этого выполняем следующие
-                                команды:<br>
+                                Next, we need to install the necessary packages, for this we run the following commands:<br>
                                 <kbd>apt update</kbd><br>
                                 <kbd>apt install apt-transport-https ca-certificates curl gnupg-agent
                                     software-properties-common wget screen -y</kbd><br>
                             </div>
                             <div class="mb-4 ml-1">
-                                Теперь нам нужно установить Docker, так как его наличие требуется для запуска ноды
-                                Concordium. Для этого выполняем следующие команды:<br>
+                                Now we need to install Docker, as it is required to run the Concordium node. To do this, run the following commands:<br>
                                 <kbd>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
                                     -</kbd><br>
                                 <kbd>sudo apt-key fingerprint 0EBFCD88</kbd><br>
@@ -165,39 +156,33 @@
                                 <kbd>apt update</kbd><br>
                                 <kbd>apt install docker-ce docker-ce-cli containerd.io -y</kbd><br>
 
-                                Проверим, все ли установилось корректно:<br>
+                                Let's check if everything was installed correctly:<br>
                                 <kbd>systemctl status docker</kbd><br>
                                 <img src="img/1.png" class="img-fluid my-1" alt="Docker Status"><br>
-                                Если да - вы увидите примерно то же самое, что и на скриншоте. Если нет - повторите шаги
-                                выше.
+                                If so, you will see the same as in the screenshot. If not, repeat the steps above.
                             </div>
-                            <h4>1.3. Создание пользователя</h4>
+                            <h4>1.3. Create a User</h4>
                             <div class="mb-4 ml-1">
-                                Теперь нам нужно создать пользователя, из под которого будет работать нода - работать из
-                                под рута нода Concordium не будет. Для этого выполним следующие шаги:<br>
+                                Now we need to create a special user as the Concordium node will not work under the root. To do this, follow these steps:<br>
                                 <kbd>useradd -m concordium --shell /bin/bash</kbd><br>
                                 <kbd>echo "concordium:onehundredsecurepwd*100" | chpasswd</kbd><br>
                                 <div class="alert alert-warning my-3">
-                                    Вы можете выбрать какое вам удобно имя пользователя и пароль, предложенное здесь -
-                                    примеры. Имя пользователя concordium используется для удобства, если вам нужно
-                                    другое - вы можете установить другое значение, но тогда учитывайте это при
-                                    выполнении дальнейших шагов.
+                                    You can choose whichever username and password you like, suggested here is just an example. The concordium username is used for convenience, if you need something else - you can set a different value, but then take that into account when performing the next steps.
                                 </div>
-                                Теперь присвоим пользователю необходимые группы:<br>
+                                Now let's assign the necessary groups to the user:<br>
                                 <kbd>usermod -aG sudo concordium</kbd><br>
                                 <kbd>groupadd docker</kbd><br>
                                 <kbd>usermod -aG docker concordium</kbd><br>
                                 <div class="mt-3">
-                                    Теперь нам нужно подготовить окружение пользователя и залогиниться под созданным
-                                    аккаунтом, поэтому выполним следующие команды:<br>
+                                    Now we need to prepare the user's environment and log in under the created account, so we run the following commands:<br>
                                     <kbd>cd /home</kbd><br>
                                     <kbd>chown concordium: concordium</kbd><br>
                                     <kbd>su --login concordium</kbd><br>
                                 </div>
                             </div>
-                            <h4>1.4. Настройка пользователя</h4>
+                            <h4>1.4. User setting</h4>
                             <div class="mb-4 ml-1">
-                                Сменив пользователя нам нужно заново добавить переменные, для этого выполняем:<br>
+                                After changing the user, we need to re-add the variables, for this we execute:<br>
                                 <kbd>echo 'export PATH=$PATH:/home/concordium/concordium-software' >>
                                     $HOME/.bashrc</kbd><br>
                                 <kbd>echo 'export IP=$(curl ifconfig.me)' >> $HOME/.bashrc</kbd><br>
@@ -206,75 +191,68 @@
                         </div>
                     </div>
                     <div class="mb-5" id="setup">
-                        <h3>2. Установка ноды</h3>
+                        <h3>2. Installing a node</h3>
                         <div>
-                            <h4>2.1. Скачивание ноды</h4>
+                            <h4>2.1. Downloading nodes</h4>
                             <div class="mb-4 ml-1">
-                                Теперь нам необходимо скачать ПО ноды Concordium, для этого выполняем команды:<br>
+                                Now we need to download the software of the Concordium node, for this we execute:<br>
                                 <kbd>wget -O concordium.tar.gz
                                     https://client-distribution-testnet.concordium.com/concordium-software-linux_0.4.8-0.tar.gz</kbd><br>
                                 <kbd>tar -xf concordium.tar.gz</kbd><br>
                                 <kbd>cd concordium-software</kbd><br>
                             </div>
 
-                            <h4>2.2. Запуск ноды</h4>
+                            <h4>2.2. Running a node</h4>
                             <div class="mb-4 ml-1">
-                                Запускаем ноду:<br>
+                                Launch the node:<br>
                                 <kbd>./concordium-node</kbd><br>
-                                Если все в порядке, то вы увидите следующее:<br>
+                                If everything is okay, then you will see the following:<br>
                                 <img src="img/2.png" class="img-fluid my-1" alt="Concordium starting"><br>
-                                Здесь вам нужно ввести имя вашей ноды, вводите любое - это нужно вам для поиска вашей
-                                ноды в эксплорере.<br>
-                                После этого у вас должно появиться такое окно, а дальше в этом окне будет работать ваша
-                                нода Concordium:<br>
+                                Here you need to enter the name of your node, enter any name - you need this to find your node in the explorer.<br>
+                                After that, you should have a window as shown above, and then your Concordium node will work in it.<br>
                                 <img src="img/3.png" class="img-fluid my-1" alt="Concordium starting 2"><br>
-                                Поздравляю! Вы установили ноду Concordium.
                             </div>
                         </div>
                     </div>
                     <div class="mb-5" id="concordium-id">
-                        <h3>3. Работа с приложением Concordium ID</h3>
-                        <h4>3.1. Установка приложения</h4>
-                        <h5>3.1.1. Установка на Android</h5>
+                        <h3>3. Working with Concordium ID application</h3>
+                        <h4>3.1. Installing the application</h4>
+                        <h5>3.1.1. Installation on Android</h5>
                         <div class="mb-4 ml-2">
                             <div class="alert alert-warning my-3">
-                                Для установки необходим телефон с версией Android 8 и выше.
+                                To install, you need a phone with Android version 8 or higher.
                             </div>
                             <ul class="pl-5">
-                                <li>Скачиваем <a
+                                <li>Download <a
                                         href="https://client-distribution-testnet.concordium.com/wallet-testnet-release-0.5.30.apk">Concordium
                                         ID APK</a></li>
-                                <li>Вы можете увидеть предупреждения о скачивании .apk файла, если такое произойдет -
-                                    нажимайте OK.</li>
+                                <li>You may see warnings about downloading the .apk file, if this happens, click OK.</li>
                                 <li>
-                                    После запуска .apk файла вы можете увидеть сообщение о том, что у вас в настройках
-                                    запрещена установка приложений из неизвестных источников.<br>
-                                    <snall>Для того, чтобы разрешить установку перейдите в настройки и подтвердите
-                                        установку приложения, а затем вернитесь назад.</snall>
+                                    After launching the .apk file, you may see a message stating that the installation of applications from unknown sources is prohibited in your settings.<br>
+                                    <snall>In order to allow the installation, go to the settings and confirm the installation of the application, and then go back.</snall>
                                 </li>
-                                <li>Теперь вас спросят хотите ли вы установить приложение, нажмите Install.</li>
+                                <li>Now you will be asked if you want to install the application, click Install.</li>
                             </ul>
                         </div>
-                        <h5>3.1.2. Установка на iOS</h5>
+                        <h5>3.1.2. Installation on iOS</h5>
                         <div class="mb-4 ml-2">
                             <div class="alert alert-warning my-3">
-                                Для установки необходим iPhone с версией iOS 13 и выше, а так же приложение TestFlight.
+                                To install on iOS, we need iPhone with iOS 13+ and TestFlight app.
                             </div>
                             <ul class="pl-5">
-                                <li>Устанавливаем <a
+                                <li>Install <a
                                         href="https://apps.apple.com/dk/app/testflight/id899247664?l=da">TestFlight</a>
-                                    через AppStore</li>
-                                <li>Присоединяемся к <a
-                                        href="https://apps.apple.com/dk/app/testflight/id899247664?l=da">программе
-                                        тестирования</a> (этот шаг рекомендуется делать непосредственно с телефона)</li>
+                                    via AppStore</li>
+                                <li>Join the <a
+                                        href="https://apps.apple.com/dk/app/testflight/id899247664?l=da">testing programm</a> (this step is recommended to be done directly from the phone)</li>
                                 <li>
-                                    Открываем приложение TestFlight и устанавливаем Concordium ID.
+                                    Open TestFlight app and set Concordium ID.
                                 </li>
                             </ul>
                         </div>
                         <h4>3.2. Запуск приложения</h4>
                         <div class="mb-4 ml-1">
-                            Запускаем приложение, нажимаем Yes, lets go! и устанавливаем пароль:<br>
+                            Launch the application, click Yes, lets go! and set the password:<br>
                             <div class="row my-3">
                                 <div class="col-6">
                                     <img src="img/4.png" class="img-fluid my-1" alt="Concordium ID 1">
@@ -283,7 +261,7 @@
                                     <img src="img/5.png" class="img-fluid my-1" alt="Concordium ID 2">
                                 </div>
                             </div>
-                            Затем нажимаем I want to create my initial account, затем Okay, got it!<br>
+                            Then click 'I want to create my initial account', then Okay, got it!<br>
                             <div class="row my-3">
                                 <div class="col-6">
                                     <img src="img/6.jpg" class="img-fluid my-1" alt="Concordium ID 3">
@@ -293,14 +271,13 @@
                                 </div>
                             </div>
                         </div>
-                        <h4>3.3. Создание аккаунта</h4>
+                        <h4>3.3. Account creation</h4>
                         <div class="mb-4 ml-1">
-                            Нам необходимо указать:<br>
+                            We need to indicate:<br>
                             <ul>
-                                <li>Название аккаунта (далее в качестве названия аккаунта будет использоваться
-                                    ConcordiumBegginerGuide)</li>
-                                <li>Ваше имя</li>
-                                <li>KYC-провайдера</li>
+                                <li>Account name (hereinafter ConcordiumBegginerGuide will be used as the account name)</li>
+                                <li>Your name</li>
+                                <li>KYC provider</li>
                             </ul>
                             <div class="row my-3">
                                 <div class="col-6">
@@ -310,10 +287,8 @@
                                     <img src="img/9.jpg" class="img-fluid my-1" alt="Concordium ID 6">
                                 </div>
                             </div>
-                            Пройти KYC на данный момент можно как используя реальные документы, так и без них. Для того,
-                            чтобы пройти KYC без документов выберите Notabene Development.<br>
+                            At the moment, you can go through KYC both using real documents and without them. To pass KYC without documents, select Notabene Development.<br>
                             <img src="img/10.jpg" class="img-fluid my-1" alt="Concordium ID 7"><br>
-                            Менять данные не нужно, просто скроллите вниз и нажимаете Continue.<br>
                             <div class="row my-3">
                                 <div class="col-6">
                                     <img src="img/11.jpg" class="img-fluid my-1" alt="Concordium ID 7">
@@ -322,16 +297,13 @@
                                     <img src="img/12.jpg" class="img-fluid my-1" alt="Concordium ID 8">
                                 </div>
                             </div>
-                            После того, как вы пройдете KYC, вы увидите свой аккаунт и баланс на нем.<br>
+                            After you go through KYC, you will see your account and balance on it.<br>
                             <img src="img/13.jpg" class="img-fluid my-1" alt="Concordium ID 9"><br>
-                            Теперь вам необходимо подождать некоторое время (пока идет подтверждение KYC), после чего
-                            вам будет доступна возможность запроса баланса.<br>
+                            Now you need to wait a while (while the KYC confirmation is in progress), after which you will be able to request a balance.<br>
                         </div>
-                        <h4>3.4. Запрос баланса</h4>
+                        <h4>3.4. Request a balance</h4>
                         <div class="mb-4 ml-1">
-                            Кликните по надписи "Balance" и вы увидите окно, в котором сможете запросить 100 GTU (вам
-                            придет 2000 GTU, значение 100 осталось с прошлого тестнета), запросите, ожидайте
-                            поступления.<br>
+                            Click on your account name. You will see a window in which you can request 100 GTU (you will actually receive 2000 GTU, the value of 100 is left from the last testnet), ask and wait for receipt.<br>
                             <div class="row my-3">
                                 <div class="col-6">
                                     <img src="img/14.jpg" class="img-fluid my-1" alt="Concordium ID 10">
@@ -340,106 +312,91 @@
                                     <img src="img/15.jpg" class="img-fluid my-1" alt="Concordium ID 11">
                                 </div>
                             </div>
-                            После поступления токенов на баланс можете переходить к следующему шагу.
+                            After the tokens arrive on your balance, you can proceed to the next step.
                         </div>
-                        <h4>3.5. Экспорт аккаунта</h4>
+                        <h4>3.5. Export account</h4>
                         <div class="mb-4 ml-1">
-                            Процедура экспорта аккаунта необходима для того, чтобы мы могли полноценно пользоваться
-                            нодой. Для того, чтоб экспортировать аккаунт выполните следующие действия:<br>
+                            The account export procedure is necessary so that we can fully use the node. In order to export your account, follow these steps:<br>
                             <ul>
-                                <li>В приложении нажмите More в правом нижнем углу</li>
-                                <li>Нажмите Export</li>
-                                <li>Нажмите Continue</li>
-                                <li>Введите пароль, который в дальнейшем будете использовать при работе с аккаунтом на
-                                    ноде</li>
-                                <li>Проскролльте вниз, выберите Save to Files, сохраните</li>
+                                <li>In the app, click More in the bottom right corner</li>
+                                <li>Click Export</li>
+                                <li>Click Continue</li>
+                                <li>Enter the password that you will use later when working with an account (in the node)</li>
+                                <li>Scroll down, select Save to Files, save</li>
                             </ul>
-                            Теперь вам нужно перенести файл export.concordiumwallet на ваш компьютер, а затем на сервер.
-                            Для того, чтобы залить файл на сервер воспользуйтесь FTP клиентом (например FileZilla или
-                            WinSCP).<br>
-                            Подключившись к серверу по FTP сохраните ваши ключи в удобном для вас месте (в дальнейшем мы
-                            будем использовать путь /home/concordium/jsons/export.concordiumwallet как путь к вашему
-                            файлу ключа, рекомендуется сохранить их в этом же месте).<br>
+                            Now you need to transfer the export.concordiumwallet file to your computer and then to the server. To upload a file to the server, use an FTP client (for example FileZilla or WinSCP).<br>
+                            After connecting to the server via FTP, save your keys in a convenient place for you (in the future we will use the path /home/concordium/jsons/export.concordiumwallet as the path to your key file, it is recommended to save them in the same place).<br>
                         </div>
                     </div>
                     <div class="mb-5" id="account">
-                        <h3>4. Добавление аккаунта</h3>
+                        <h3>4. Adding an account</h3>
                         <div>
                             <div class="alert alert-warning my-3">
-                                На этом шаге подразумевается, что у вас уже экспортирован аккаунт и он находится по пути
-                                /home/concordium/jsons/ с названием export.concordiumwallet (т.е. полный путь к файлу
-                                выглядит как /home/concordium/jsons/export.concordiumwallet)
+                                This step assumes that you have already exported an account and it is located in the path / home / concordium / jsons / named export.concordiumwallet (i.e. the full path to the file looks like / home / concordium / jsons / export .concordiumwallet)
                             </div>
-                            <h4>4.1. Импорт аккаунта</h4>
+                            <h4>4.1. Import account</h4>
                             <div class="mb-4 ml-1">
-                                Импортируем наш аккаунт командой:<br>
+                                Import the account with the command:<br>
                                 <kbd>concordium-client config account import
                                     /home/concordium/jsons/export.concordiumwallet --name ConcordiumBegginerGuide
                                     --grpc-ip $IP</kbd><br>
                             </div>
-                            <h4>4.2. Создание бейкера</h4>
+                            <h4>4.2. Creating a baker</h4>
                             <div class="mb-4 ml-1">
-                                Теперь нам нужно сделать ключи для бейкера, для этого выполняем команды:<br>
+                                Now we need to make the keys for the baker, for this we run the commands:<br>
                                 <kbd>mkdir /home/concordium/keys</kbd><br>
                                 <kbd>/home/concordium/keys</kbd><br>
                                 <kbd>concordium-client baker generate-keys /home/concordium/keys/key.json</kbd><br>
-                                Теперь нам необходимо подождать пока нода будет синхронизироваться, это займет
-                                время.<br>
-                                Для проверки статуса ноды необходимо найти ее в эксплорере (в нашем случае она
-                                называется ConcordiumBegginerGuide) и сравнить значение Height of best block с другой,
-                                уже синронизированной нодой (возьмите, например, ноду с аптаймом больше суток).<br>
+                                Now we need to wait for the node to sync, it will take some time.<br>
+                                To check the status of a node, you need to find it in the explorer (in our case, it is called ConcordiumBegginerGuide) and compare the 'Height of best block' value with another, already synchronized node (for example, a node with an uptime of more than a day).<br>
                             </div>
-                            <h4>4.3. Добавление бейкера</h4>
+                            <h4>4.3. Adding a baker</h4>
                             <div class="mb-4 ml-1">
-                                Когда нода синхронизируется приступаем к следующему шагу - добавляем бейкера:<br>
+                                When the node is synchronized, proceed to the next step - add a baker:<br>
                                 <kbd>concordium-client baker add /home/concordium/keys/key.json --sender
                                     ConcordiumBegginerGuide --stake 1000 --out
                                     ~/.local/share/concordium/baker-credentials.json --no-restake --grpc-ip
                                     $IP</kbd><br>
-                                В результате вы должны увидеть примерно следующее:<br>
+                                As a result, you should see the picture like this:<br>
                                 <img src="img/16.png" class="img-fluid my-1" alt="Add Baker"><br>
                                 <div class="alert alert-warning my-3">
-                                    Для появления Baker ID в эксплорере необходимо подождать 2 эпохи (2 часа) и
-                                    перезапустить ноду, после этого появится Baker ID.
+                                    For the Baker ID to appear in the explorer, you need to wait 2 epochs (~2 hours) and restart the node, after which the Baker ID will appear.
                                 </div>
-                                Проверяем, являемся ли мы бейкером. Для этого необходимо ввести команду:<br>
+                                Let's check if we are a baker. To do this, enter the command:<br>
                                 <kbd>concordium-client raw GetNodeInfo --grpc-ip $IP</kbd><br>
-                                Значение Baker committee member должно быть True.
+                                'Baker committee member' must be True.
                                 <div class="alert alert-warning my-3">
-                                    Если значение Baker committee member False - перезапустите ноду или подождите.<br>
-                                    Если в результате этого Baker committee member все еще False - проверьте наличие
-                                    baker-credentials.json по адресу /home/concordium/.local/share/concordium, для этого
-                                    нужно выполнить команду:<br>
+                                    If 'False' - restart the node or wait. If after this 'Baker committee member' is still 'False' - check for the presence of baker-credentials.json at /home/concordium/.local/share/concordium, for this you'll need to run the command:<br>
                                     <kbd>cat /home/concordium/.local/share/concordium/baker-credentials.json</kbd><br>
-                                    Примерный вывод должен быть такой:<br>
+                                    The output should look like this:<br>
                                     <img src="img/17.png" class="img-fluid my-1" alt="Baker Credentials"><br>
-                                    Если у вас выдает ошибку, то повторите заново шаги выше (пункт 4.3)
+                                    If you get an error, then repeat the steps above (p. 4.3)
                                 </div>
-                                Поздравляю, вы запустили ноду Concordium!
+                                Congratulations, you've launched the Concordium node!
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-5">
-                        <h3>Полезная информация</h3>
+                        <h3>Useful additional information:</h3>
                         <div>
-                            <h4 class="ml-0">Ссылки</h4>
+                            <h4 class="ml-0">Links</h4>
                             Concordium explorer - <a
                                 href="https://dashboard.testnet.concordium.com/">dashboard.testnet.concordium.com</a><br>
                             Testnet Challengs - <a
                                 href="https://github.com/Concordium/Testnet4-Challenges">Testnet4-Challenges</a><br>
-                            <h4 class="ml-0">Команды:</h4>
-                            <strong>Обновить стейк:</strong><br>
+                            <h4 class="ml-0">Commands:</h4>
+                            <strong>Update stake:</strong><br>
                             <kbd>concordium-client baker update-stake --sender ConcordiumBegginerGuide --stake 1800
                                 --grpc-ip $IP</kbd><br>
-                            <strong>Остановить ноду:</strong><br>
+                            <strong>Stopping the node:</strong><br>
                             <kbd>concordium-node-stop</kbd><br>
-                            <strong>Запустить ноду:</strong><br>
+                            <strong>Starting the node:</strong><br>
                             <kbd>screen -rd concordium</kbd><br>
                             <kbd>concordium-node</kbd><br>
-                            <strong>Посмотреть список бейкеров и их шанс на добычу блока:</strong><br>
+                            <strong>Show bakers list and lottery power:</strong><br>
                             <kbd>concordium-client consensus show-parameters --include-bakers --grpc-ip $IP</kbd><br>
-                            <strong>Получить логи:</strong><br>
+                            <strong>Getting the logs:</strong><br>
                             <kbd>su --login concordium</kbd><br>
                             <kbd>wget
                                 https://client-distribution-testnet.concordium.com/retrieve_minified_logs-linux-v1</kbd><br>
@@ -451,8 +408,8 @@
             </div>
         </div>
     </div>
-    <footer class="text-center mb-1">
-        <!-- Сделано с любовью <a href="https://docs.google.com/forms/d/e/1FAIpQLScwF7Ehu9dzbpVSvLy4RIhxvrRTM1FJZ56Vo5Fy-4XU8optHA/viewform">666BANDIT007#2836</a> -->
+    <footer class="text-center my-2">
+        Made with love by <a href="https://github.com/kinrokinro">Support#9991</a>
     </footer>
     <script src="js/script.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
